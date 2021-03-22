@@ -3,30 +3,59 @@ html{
     
 }
 body{
-    background-color: black;
+    background-image:linear-gradient(to bottom, black,rgb(0, 0, 8));
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     
 }
 
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+.hmm{
+    display:inline;
+}
+#urHP{
+    position: relative;
+    justify-content:right;
+    color: #add8e6;
+    margin-left: 75%;
+}
 .bootons{
     display: flex;
     align-content: center;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 30px;
+    width: auto;
+    height: auto;
 }
-#fight,#save,#Atk1,#Atk2{
+#fight,#save,#Atk1,#Atk2,#Back{
     font-size: 10%;
     font-family: 'Press Start 2P',cursive;
     padding-top: 10px;
     padding-bottom: 10px;
+
 }
 
-#fight:hover,#save:hover,#Atk1:hover,#Atk2:hover{
+.notNow{
+    display: none;
+    visibility: hidden;
+}
+
+#fight:hover,#save:hover,#Atk1:hover,#Atk2:hover,#Back:hover{
     cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;
-    background-color: darken(50%);
-    font-family: 'Press Start 2P', cursive;
+    background-color: #add8e6;
+}
+
+
+#fight:active,#save:active,#Atk1:active,#Atk2:active,#Back:active{
+    background-color:hsl(195, 53%, 65%);
+    transform: translateY(1.5px);
+    transition-duration: 0.4s;
 }
 
 #hp{
@@ -58,8 +87,5 @@ body{
     margin: 10px -4.5rem;
 }
 
-.hidden{
-    display: none;
-    visibility: hidden;
-}
+
 
