@@ -1,0 +1,58 @@
+body{
+    background-color: black;
+   text-align: center;
+}
+
+.bootons{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 300px;
+}
+
+#next{
+    position: relative;
+}
+#prev{
+    position:relative;
+}
+
+#enemies{
+    position: relative;
+}
+
+.NME{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    padding-left:13.5rem;
+    
+    
+} 
+#enemy_6{
+    width:400px;
+    height: 400px;
+    margin: 10px -4.5rem;
+}
+
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+#container-caro{
+    position: relative;
+}
+.image{
+    position: absolute;
+}
+.NME-im img {
+  width: 100%;
+  display: none;
+}
+
+.NME-im img:first-of-type {
+  display: block;
+  
+}
