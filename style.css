@@ -1,6 +1,7 @@
 body{
     background-color: black;
    text-align: center;
+   cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/Cursor.png");
 }
 
 .bootons{
@@ -11,24 +12,23 @@ body{
     margin-top: 300px;
 }
 
-#next{
-    position: relative;
+#hp{
+    color:white;
 }
-#prev{
-    position:relative;
+
+#hp2{
+    color:white;
 }
 
 #enemies{
-    position: relative;
+    justify-content: center;
 }
 
 .NME{
-    position:absolute;
+    justify-items: center;
     width: 100px;
     height: 100px;
-    padding-left:13.5rem;
-    
-    
+    margin: 13.5rem 13.5rem -14rem 31.5rem;
 } 
 #enemy_6{
     width:400px;
@@ -41,18 +41,3 @@ body{
     visibility: hidden;
 }
 
-#container-caro{
-    position: relative;
-}
-.image{
-    position: absolute;
-}
-.NME-im img {
-  width: 100%;
-  display: none;
-}
-
-.NME-im img:first-of-type {
-  display: block;
-  
-}
