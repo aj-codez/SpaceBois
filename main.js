@@ -31,7 +31,7 @@ class Me{
             enemyName.announceHealth();
         }
         else{
-
+            healthy.innerText=("You Missed");
         }
     }
 }
@@ -87,8 +87,11 @@ else if(arrAliens[corr].HP<=0){
     corr+=1;
     arrAliens[corr].classList.remove("hidden");
 }
+const rumble = () =>{
+    if(arrAliens[corr].HP<=0){
+        
+    }
+}
 
 
-
-
-fighto.addEventListener('click',announceHealth())
+fighto.addEventListener('click',)
