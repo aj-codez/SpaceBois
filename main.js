@@ -72,6 +72,10 @@ for (i=0;i<trophyArr.length;i++){
     trophyArr[i].classList.add("hidden");
 }
 
+const secretBat= document.getElementById("")
+
+
+
 class Me{
     constructor(name,HP,attacks){
         this.name=name;
@@ -112,7 +116,7 @@ class Aliens {
         if(Math.random()<=currentAtk.accuracy){
             DummyMe.HP-=(currentAtk.damage);
             healtho.innerText=(this.name+" used "+currentAtk.name +'!');
-            myhp.innerText=(DummyMe.HP+"/"+100);
+            myhp.innerText=(DummyMe.HP+"/"+baseP);
         }
         else{
             healtho.innerText=("The Enemy Missed");
@@ -168,13 +172,16 @@ arrAliensNME.push(dingle,ploomoo,slipp);
 let corr=0;
 
 const rumble1 = () =>{
+    if(meee.HP>0){
     if (arrAliensNME[corr].HP<=0){
         arrAliens[corr].classList.add('hidden');
         trophyArr[corr].classList.remove("hidden");
+        urhp.innerText="You beat "+arrAliensNME[corr].name;
         corr+=1;
         arrAliens[corr].classList.remove('hidden');
-        meee.HP+=25;
-        baseP+=25;
+        urhp.innerText=arrAliensNME[corr].HP;
+        // meee.HP+=10;
+        // baseP+=10;
          myhp.innerText=(meee.HP+"/"+baseP);
         meee.fight(arrAliensNME[corr],meee.attacks[0],0.8,corr);
     arrAliensNME[corr].fight(meee,arrAliensNME[corr].attacks,arrAliensNME[corr].accuracy);
@@ -183,8 +190,15 @@ const rumble1 = () =>{
     meee.fight(arrAliensNME[corr],meee.attacks[0],0.8,corr);
     arrAliensNME[corr].fight(meee,arrAliensNME[corr].attacks,arrAliensNME[corr].accuracy);
 }
-    
+    }
+    else{
+        fighto.classList.add("notNow");
+        repol.classList.add("notNow");
+        healtho.innerText="You've Lost";
+        healthy.innerText="";
+    }
 }
+
 
 const rumble2 = ()=>{
     // if (corr==5 && arrAliensNME[5].HP<=0){
@@ -205,6 +219,12 @@ const rumble2 = ()=>{
         meee.fight(arrAliensNME[corr],meee.attacks[1],0.5,corr);
         arrAliensNME[corr].fight(meee,arrAliensNME[corr].attacks,arrAliensNME[corr].accuracy);
     }
+}
+if(meee.HP<=0){
+    fighto.classList.add("notNow");
+    repol.classList.add("notNow");
+    healtho.innerText="You've Lost";
+    healthy.innerText="";
 }
 
 fighto.addEventListener('click',fmenu);
