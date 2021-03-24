@@ -85,9 +85,9 @@ button:active{
     width: 9px;
     height: 9px;
 }
-#secret-button:hover{
-    /*cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;*/
-}
+/*#secret-button:hover{
+    cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;
+}*/
 
 
 /**/
@@ -104,9 +104,9 @@ button:active{
     padding: 0px 0px 0px 0px;
     border-color: transparent;
 }
-#battonB:hover{
-   /* cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;*/
-}
+/* #battonB:hover{
+    cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;
+} */
 
 
 
