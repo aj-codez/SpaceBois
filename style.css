@@ -63,9 +63,15 @@ https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
     display: inline-block;
 }
 
-
-
-
+.gooby:hover{
+    cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/Cursor.png"),auto;
+}
+button:hover{
+    cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/Cursor.png"),auto;
+}
+button:active{
+    cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;
+}
 
 
 /**/
@@ -79,6 +85,9 @@ https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
     width: 9px;
     height: 9px;
 }
+#secret-button:hover{
+    /*cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;*/
+}
 
 
 /**/
@@ -86,22 +95,7 @@ https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
 #batton{
     color:white;
 }
-#battonT{
-    color: white;
-    font-family: inherit;
-    font-size: inherit;
-    background-color: transparent;
-    padding: 0px 0px 0px 0px;
-    border-color: transparent;
-}
-#battonA{
-    color: white;
-    font-family: inherit;
-    font-size: inherit;
-    background-color: transparent;
-    padding: 0px 0px 0px 0px;
-    border-color: transparent;
-}
+
 #battonB{
     color: white;
     font-family: inherit;
@@ -110,7 +104,9 @@ https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
     padding: 0px 0px 0px 0px;
     border-color: transparent;
 }
-
+#battonB:hover{
+   /* cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;*/
+}
 
 
 
@@ -168,7 +164,7 @@ https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
 }
 
 #fight:hover,#save:hover,#Atk1:hover,#Atk2:hover,#Back:hover{
-    cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;
+    /*cursor: url("/Users/christianbarker/Desktop/Projects/Project_1/Enemies/Cursors/CursorYes.png"),auto;*/
     background-color: #add8e6;
 }
 

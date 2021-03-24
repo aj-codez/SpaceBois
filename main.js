@@ -107,14 +107,18 @@ let seeeecret =false;
 const findHim = ()=>{
     arrAliensNME.push(eulid);
     arrAliens.push(starEater);
+    loneStar.style.backgroundColor="red";
     loneStar.classList.add("nah");
+    loneStar.classList.add("gooby");
     seeeecret=true;
 }
 let bat=false;
 const makebats = ()=>{
     arrAliensNME.push(hawkwim);
     arrAliens.push(secretBat);
+    bButton.classList.add("hit");
     bButton.style.color="brown";
+    bButton.classList.add("gooby");
     bat=true;
 }
 
@@ -291,7 +295,7 @@ const rumble1 = () =>{
             urhp.innerText="You beat "+arrAliensNME[corr].name;
             bButton.setAttribute("disabled",true);
             arrAliens[corr].classList.add("hidden");
-            trophyArr[corr].classList.remove("hidden");
+            trophyArr[5].classList.remove("hidden");
         }
         else if (arrAliensNME[corr].name=="Eulid" && arrAliensNME[corr].HP<=0 && bat==false){
             fighto.classList.add("notNow");
@@ -304,7 +308,7 @@ const rumble1 = () =>{
             urhp.innerText="You beat "+arrAliensNME[corr].name;
             bButton.setAttribute("disabled",true);
             arrAliens[corr].classList.add("hidden");
-            trophyArr[corr].classList.remove("hidden");
+            trophyArr[6].classList.remove("hidden");
         }
         else if(corr==6 && arrAliensNME[corr].HP<=0){
             fighto.classList.add("notNow");
@@ -376,7 +380,7 @@ const rumble2 = ()=>{
             urhp.innerText="You beat "+arrAliensNME[corr].name;
             bButton.setAttribute("disabled",true);
             arrAliens[corr].classList.add("hidden");
-            trophyArr[corr].classList.remove("hidden");
+            trophyArr[5].classList.remove("hidden");
         }
         else if (arrAliensNME[corr].name=="Eulid" && arrAliensNME[corr].HP<=0 && bat==false){
             fighto.classList.add("notNow");
@@ -389,7 +393,7 @@ const rumble2 = ()=>{
             urhp.innerText="You beat "+arrAliensNME[corr].name;
             bButton.setAttribute("disabled",true);
             arrAliens[corr].classList.add("hidden");
-            trophyArr[corr].classList.remove("hidden");
+            trophyArr[6].classList.remove("hidden");
         }
         else if(corr==6 && arrAliensNME[corr].HP<=0){
             fighto.classList.add("notNow");
