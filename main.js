@@ -17,6 +17,8 @@ const statMes= document.querySelector("#statbar");
         atk2.classList.remove("notNow");
         fighto.classList.add("notNow");
         repol.classList.add("notNow");
+        statMes.classList.remove('nah');
+        statMes.innerText="";
         }
         else{
             fighto.classList.add("notNow");
@@ -56,10 +58,11 @@ const statMes= document.querySelector("#statbar");
         }
         else if (meee.HP==baseP){
             statMes.innerText="You're at full health!";
-            statMes.classList.add('hit');
+            statMes.classList.add('nah');
         }
         else{
             statMes.innerText="You're out of repair tools";
+            statMes.classList.add('nah');
         }
     }
 
@@ -93,22 +96,28 @@ for (i=0;i<trophyArr.length;i++){
 }
 
 const secretBat= document.getElementById("enemy_7");
-
-
-
+    secretBat.classList.add("hidden");
 const bButton = document.getElementById("battonB");
 
+const starEater=document.getElementById("enemy_8");
+    starEater.classList.add("hidden");
+const loneStar = document.getElementById("secret-button");
 
-
-
+let seeeecret =false;
+const findHim = ()=>{
+    arrAliensNME.push(eulid);
+    arrAliens.push(starEater);
+    loneStar.classList.add("nah");
+    seeeecret=true;
+}
 let bat=false;
 const makebats = ()=>{
     arrAliensNME.push(hawkwim);
     arrAliens.push(secretBat);
+    bButton.style.color="brown";
     bat=true;
 }
 
-secretBat.classList.add("hidden");
 
 class Me{
     constructor(name,HP,attacks){
@@ -137,7 +146,17 @@ class Me{
     }
 }
     
-    
+
+//Make My Ship
+const meee = new Me("S.S. Bumpkins",100,[
+    {name:"Missiles",
+    damage:15,
+},
+    {name:"Big Gun",
+    damage:25,
+}
+]);
+
 class Aliens {
     constructor(name,HP,attacks){
         this.name=name;
@@ -156,21 +175,11 @@ class Aliens {
             healtho.classList.add("hit");
         }
         else{
-            healtho.innerText=("The Enemy Missed");
+            healtho.innerText=( this.name+" Missed");
             healtho.classList.add("hit");
         }    
     }
 }
-
-//Make My Ship
-const meee = new Me("S.S. Bumpkins",100,[
-    {name:"Missiles",
-    damage:15,
-},
-    {name:"Big Gun",
-    damage:25,
-}
-]);
 
 //Make my Enemies
 const dingle = new Aliens("Dingle",25,[{
@@ -215,7 +224,7 @@ const iplums = new Aliens("Iplums",62.5,[{
     accuracy: .45
 }]);
 
-const bumgum= new Aliens("Gumpy",75,[{
+const gumpy= new Aliens("Gumpy",75,[{
     name:"Goo Punch",
     damage:45,
     accuracy:.5
@@ -227,17 +236,30 @@ const bumgum= new Aliens("Gumpy",75,[{
 ]);
 
 let arrAliensNME = [];
-arrAliensNME.push(dingle,ploomoo,slipp,iplums,bumgum);
+arrAliensNME.push(dingle,ploomoo,slipp,iplums,gumpy);
 
+
+//Secret Enemies
 const hawkwim = new Aliens("Hawkwin",75,[{
     name:"Swoop",
     damage:45,
-    accuracy:0.4,
+    accuracy:0.4
 },{
     name:"Loud Scream",
     damage:30,
     accuracy:0.6
 }]);
+const eulid = new Aliens("Eulid",75,[{
+    name:"Nova!!!",
+    damage: 45,
+    accuracy:0.4
+},{
+    name:"Eldrich Gaze",
+    damage:30,
+    accuracy:0.6
+}]);
+
+//
 
 
 let corr=0;
@@ -245,7 +267,7 @@ let corr=0;
 
 const rumble1 = () =>{
     if(meee.HP>0){
-        if(corr==4 && arrAliensNME[corr].HP<=0 && bat==false){
+        if(corr==4 && arrAliensNME[corr].HP<=0 && bat==false&&seeeecret==false){
             fighto.classList.add("notNow");
             backo.classList.add("notNow");
             atk1.classList.add("notNow");
@@ -253,18 +275,49 @@ const rumble1 = () =>{
             repol.classList.add("notNow");
             healthy.innerText="";
             healtho.innerText="You've Won";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
             bButton.setAttribute("disabled",true);
             arrAliens[corr].classList.add("hidden");
             trophyArr[corr].classList.remove("hidden");
         }
-        else if(arrAliensNME[corr].name=="Hawkwin" && arrAliensNME[corr].HP<=0){
+        else if(arrAliensNME[corr].name=="Hawkwin" && arrAliensNME[corr].HP<=0 && seeeecret==false){
             fighto.classList.add("notNow");
             backo.classList.add("notNow");
             atk1.classList.add("notNow");
             atk2.classList.add("notNow");
             repol.classList.add("notNow");
-            healtho.innerText="You've Won!";
-            healthy.innerText="And you've found a secret!";
+            healthy.innerText="You've Won!";
+            healtho.innerText="And you've found a secret!";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
+            bButton.setAttribute("disabled",true);
+            arrAliens[corr].classList.add("hidden");
+            trophyArr[corr].classList.remove("hidden");
+        }
+        else if (arrAliensNME[corr].name=="Eulid" && arrAliensNME[corr].HP<=0 && bat==false){
+            fighto.classList.add("notNow");
+            backo.classList.add("notNow");
+            atk1.classList.add("notNow");
+            atk2.classList.add("notNow");
+            repol.classList.add("notNow");
+            healthy.innerText="You've Won!";
+            healtho.innerText="And you've found a secret!";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
+            bButton.setAttribute("disabled",true);
+            arrAliens[corr].classList.add("hidden");
+            trophyArr[corr].classList.remove("hidden");
+        }
+        else if(corr==6 && arrAliensNME[corr].HP<=0){
+            fighto.classList.add("notNow");
+            backo.classList.add("notNow");
+            atk1.classList.add("notNow");
+            atk2.classList.add("notNow");
+            repol.classList.add("notNow");
+            healthy.innerText="You've Won!";
+            healtho.innerText="And you've found a secret!";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
+            bButton.setAttribute("disabled",true);
+            arrAliens[corr].classList.add("hidden");
+            trophyArr[corr].classList.remove("hidden");
         }
     else{
         if (arrAliensNME[corr].HP<=0){
@@ -273,7 +326,6 @@ const rumble1 = () =>{
         urhp.innerText="You beat "+arrAliensNME[corr].name;
         corr+=1;
         arrAliens[corr].classList.remove('hidden');
-        urhp.innerText=arrAliensNME[corr].HP;
         meee.HP+=10;
         baseP+=10;
          myhp.innerText=(meee.HP+"/"+baseP);
@@ -300,23 +352,54 @@ else if(meee.HP<=0){
 
 const rumble2 = ()=>{
     if(meee.HP>0){
-        if(corr==4 && arrAliensNME[corr].HP<=0 && bat==false){
+        if(corr==4 && arrAliensNME[corr].HP<=0 && bat==false && seeeecret==false){
             fighto.classList.add("notNow");
             backo.classList.add("notNow");
             atk1.classList.add("notNow");
             atk2.classList.add("notNow");
             repol.classList.add("notNow");
-            healtho.innerText="You've Won!";
             healthy.innerText="";
+            healtho.innerText="You've Won";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
+            bButton.setAttribute("disabled",true);
+            arrAliens[corr].classList.add("hidden");
+            trophyArr[corr].classList.remove("hidden");
         }
-        else if(arrAliensNME[corr].name=="Hawkwin" && arrAliensNME[corr].HP<=0){
+        else if(arrAliensNME[corr].name=="Hawkwin" && arrAliensNME[corr].HP<=0 && seeeecret==false){
             fighto.classList.add("notNow");
             backo.classList.add("notNow");
             atk1.classList.add("notNow");
             atk2.classList.add("notNow");
             repol.classList.add("notNow");
-            healtho.innerText="You've Won!";
-            healthy.innerText="And you've found a secret!";
+            healthy.innerText="You've Won!";
+            healtho.innerText="And you've found a secret!";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
+            bButton.setAttribute("disabled",true);
+            arrAliens[corr].classList.add("hidden");
+            trophyArr[corr].classList.remove("hidden");
+        }
+        else if (arrAliensNME[corr].name=="Eulid" && arrAliensNME[corr].HP<=0 && bat==false){
+            fighto.classList.add("notNow");
+            backo.classList.add("notNow");
+            atk1.classList.add("notNow");
+            atk2.classList.add("notNow");
+            repol.classList.add("notNow");
+            healthy.innerText="You've Won!";
+            healtho.innerText="And you've found a secret!";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
+            bButton.setAttribute("disabled",true);
+            arrAliens[corr].classList.add("hidden");
+            trophyArr[corr].classList.remove("hidden");
+        }
+        else if(corr==6 && arrAliensNME[corr].HP<=0){
+            fighto.classList.add("notNow");
+            backo.classList.add("notNow");
+            atk1.classList.add("notNow");
+            atk2.classList.add("notNow");
+            repol.classList.add("notNow");
+            healthy.innerText="You've Won!";
+            healtho.innerText="And you've found two secrets!";
+            urhp.innerText="You beat "+arrAliensNME[corr].name;
             bButton.setAttribute("disabled",true);
             arrAliens[corr].classList.add("hidden");
             trophyArr[corr].classList.remove("hidden");
@@ -325,6 +408,7 @@ const rumble2 = ()=>{
          if(arrAliensNME[corr].HP<=0){
          arrAliens[corr].classList.add('hidden');
          trophyArr[corr].classList.remove("hidden");
+         urhp.innerText="You beat "+arrAliensNME[corr].name;
          corr= corr+1;
          arrAliens[corr].classList.remove("hidden");
          meee.HP+=25;
@@ -354,7 +438,7 @@ else{
 
    
 
-
+loneStar.addEventListener('click',findHim);
 bButton.addEventListener('click',makebats);
 fighto.addEventListener('click',fmenu);
 backo.addEventListener('click',bmenu);

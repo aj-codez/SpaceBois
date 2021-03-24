@@ -27,10 +27,31 @@ body{
 @keyframes found{
 
 }
+
+@keyframes hideagain {
+    10%, 90%{
+        transform: translate3d(-1px,0,0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+    100%{
+        opacity: 0;
+    }
+}
 .hit{
     animation: shake 0.82s cubic-bezier(0.36,0.07,.19,.97) both;
 }
-/*
+.nah{
+    animation: hideagain 0.85s cubic-bezier(0.36,.07,.19,.97) both;
+}
+    /*
 https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
 */
 #statbar{
@@ -48,27 +69,18 @@ https://css-tricks.com/snippets/css/shake-css-keyframe-animation/
 
 
 /**/
-.secret-button{
-    
-    margin-right: 0px;
-    margin-bottom: 0%;
-    background-color: transparent;
-    border-radius: 250px;
-    border-color: transparent;
+#secret-button{
+    margin-left: 90%;
+    background-color: white;
+    border-color: white;
+    border-radius:0px;
+    border-style: solid;
+    padding: 0 0 0 0;
+    width: 9px;
+    height: 9px;
 }
 
-.butts{
-    width: 15px;
-    height: 15px;
-    border:1px transparent;
-}
-.seco{
-    position: absolute;
-    z-index: 1;
-}
-.seci{
-    z-index: 0;
-}
+
 /**/
 
 #batton{
