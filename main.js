@@ -132,16 +132,16 @@ const makebats = ()=>{
     if(seeeecret==false){
     arrAliensNME.push(hawkwim);
     arrAliens.push(secretBat);
-    bButton.classList.add("hit");
     bButton.style.color="brown";
+    bButton.classList.add("nah");
     bButton.classList.add("gooby");
     bat=true;
     }
     else{
         arrAliensNME.push(hawkwim);
     arrAliens.push(secretBat);
-    bButton.classList.add("hit");
     bButton.style.color="brown";
+    bButton.classList.add("nah");
     bButton.classList.add("gooby");
     arrAliensNME.push(kyatamak);
     arrAliens.push(traitor);
@@ -163,25 +163,24 @@ class Me{
         if(Math.random()<=hu){
             enemyName.HP-=(atc.damage);
             arrAliens[num].classList.add("hit");
+            healthy.classList.add("hit");
             healthy.innerText=(this.name+" used "+atc.name+'!');
+
         }
     
         else{
-            if(healthy.innerText=="You Missed"){
-                healthy.classList.add("hit");
-            }
-            else{
+            healthy.classList.add("hit");
             healthy.innerText=("You Missed");
+            
             }
         }
     }
-}
     
 
 //Make My Ship
 const meee = new Me("S.S. Bumpkins",100,[
     {name:"Missiles",
-    damage:15,
+    damage:5,
 },
     {name:"Big Gun",
     damage:25,
@@ -200,14 +199,14 @@ class Aliens {
     fight(DummyMe,atc){
         const currentAtk= atc[Math.round(Math.random())];
         if(Math.random()<=currentAtk.accuracy){
+            healtho.classList.add("hit");
             DummyMe.HP-=(currentAtk.damage);
             healtho.innerText=(this.name+" used "+currentAtk.name +'!');
             myhp.innerText=(DummyMe.HP+"/"+baseP);
-            healtho.classList.add("hit");
         }
         else{
-            healtho.innerText=( this.name+" Missed");
             healtho.classList.add("hit");
+            healtho.innerText=( this.name+" Missed");
         }    
     }
 }
@@ -369,11 +368,11 @@ const rumble1 = () =>{
         meee.HP+=10;
         baseP+=10;
          myhp.innerText=(meee.HP+"/"+baseP);
-        meee.fight(arrAliensNME[corr],meee.attacks[0],0.8,corr);
+        meee.fight(arrAliensNME[corr],meee.attacks[0],1,corr);
     arrAliensNME[corr].fight(meee,arrAliensNME[corr].attacks);
 }
 else{
-    meee.fight(arrAliensNME[corr],meee.attacks[0],0.8,corr);
+    meee.fight(arrAliensNME[corr],meee.attacks[0],1,corr);
     arrAliensNME[corr].fight(meee,arrAliensNME[corr].attacks);
 }
     }
