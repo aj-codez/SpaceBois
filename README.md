@@ -12,7 +12,10 @@ Every time you attack, the enemy does as well, randomly deciding which attack to
 
 
 There are a few secrets hidden as well. Who knows? Maybe finding both of them unlocks a third.
+    
     Hint 1: Try some star gazing
+    
     Hint 2: spelling is hard sometimes
+    
     Hint 3: Your cursor is a traitor
 
